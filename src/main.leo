@@ -8,6 +8,15 @@ program aleo_devrel_take_home.aleo {
         amount: u64;
     }
 
+    struct data {
+        v: u32;
+    }
+
+    record message{
+        owner: address;
+        data: data;
+    }
+
     transition mint(a: u64) -> token {
         return token{
             owner: self.caller,
@@ -30,5 +39,14 @@ program aleo_devrel_take_home.aleo {
 
     async function finalize_transfer_credits(f:Future){
         f.await();
+    }
+
+    transition create_message(a: u32) -> message{
+        return message{
+            owner: self.caller,
+            data: data{
+                v: a
+            }
+        };
     }
 }
