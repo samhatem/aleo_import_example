@@ -7,6 +7,10 @@
 - leo run transfer_credits_to_private aleo13udaaj9kqa4wua8demlrvm5em8u6et6ap4ljcjef39xaeu5mdv9snkg5aj 4u64
 
 ## Intermediate Workshop
+###
+This is just a basic website to demonstrate that we can execute the different program functions on the frontend.
+
+### Instructions
 - cd website/aleo-project
 - npm install
 - npm run dev
