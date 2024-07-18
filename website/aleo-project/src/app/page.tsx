@@ -32,6 +32,9 @@ export default function Home() {
     setExecuting(true);
     workerRef.current?.postMessage("transfer_credits");
   }
+  const reset = () => {
+    setExecuting(false);
+  };
 
   const workerRef = useRef<Worker>();
 
@@ -104,6 +107,11 @@ export default function Home() {
             {executing
               ? `Transferring Credits...check console for details...`
               : `Transfer Credits `}
+          </button>
+        </p>
+        <p>
+          <button disabled={!executing} onClick={reset}>
+            Reset
           </button>
         </p>
       </div>
